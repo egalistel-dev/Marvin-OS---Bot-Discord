@@ -1,0 +1,53 @@
+# ============================================================
+# MARVIN OS — Docker Compose
+# ============================================================
+# Placez ce fichier dans Portainer > Stacks > Add Stack
+# et collez son contenu dans l'éditeur Web.
+#
+# Avant de déployer, vérifiez les points marqués
+# "À ADAPTER" ci-dessous selon votre configuration.
+# ============================================================
+
+version: '3.8'
+
+services:
+  marvin-bot:
+
+    # Image Python utilisée — ne pas modifier
+    image: python:3.11-slim
+
+    # Nom du conteneur visible dans Portainer
+    # À ADAPTER : renommez si vous faites tourner plusieurs bots
+    container_name: marvin-app
+
+    network_mode: bridge
+
+    volumes:
+      # À ADAPTER : remplacez /volume1/docker/marvin par le chemin
+      # exact de votre dossier sur le NAS ou serveur.
+      # Ce dossier doit contenir : bot.py, requirements.txt, .env
+      - /volume1/docker/marvin:/app
+
+      # À ADAPTER : même chemin que ci-dessus, sous-dossier /img
+      # Ce dossier contiendra les images du bot (avatar, classement...)
+      - /volume1/docker/marvin/img:/app/img
+
+    working_dir: /app
+
+    ports:
+      # À ADAPTER : port d'accès au dashboard web.
+      # Format : "PORT_HOTE:5050"
+      # Exemple : "8080:5050" si le port 5050 est déjà utilisé.
+      # Accès dashboard : http://IP-DE-VOTRE-NAS:PORT_HOTE
+      - "5050:5050"
+
+    environment:
+      # Affiche les logs Python en temps réel dans Portainer — ne pas modifier
+      - PYTHONUNBUFFERED=1
+
+    # Installe les dépendances puis démarre le bot — ne pas modifier
+    command: >
+      sh -c "pip install -r requirements.txt && python bot.py"
+
+    # Redémarre automatiquement le conteneur en cas de crash ou reboot du NAS
+    restart: always

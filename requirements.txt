@@ -1,0 +1,12 @@
+discord.py
+feedparser
+requests
+beautifulsoup4
+PyNaCl
+flask
+flask-sqlalchemy
+pytz
+python-dotenv
+emoji
+werkzeug
+anthropic
