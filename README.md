@@ -5,7 +5,9 @@
 
 📸 Aperçu / Screenshots
 
-[Dashboard](screenshots/dashboard.png)[IA](screenshots/ia.png)[Evenements](screenshots/events.png) 
+| Dashboard | Onglet IA | Événements |
+|-----------|-----------|------------|
+| ![Dashboard](screenshots/dashboard.png) | ![IA](screenshots/ia.png) | ![Evenements](screenshots/events.png) |
 
 
 🇫🇷 Français
