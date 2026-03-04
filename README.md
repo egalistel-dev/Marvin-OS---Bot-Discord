@@ -4,13 +4,9 @@
 
 
 📸 Aperçu / Screenshots
-<!-- Ajoutez vos captures d'écran dans un dossier /screenshots et décommentez les lignes ci-dessous -->
-<!-- Add your screenshots in a /screenshots folder and uncomment the lines below -->
-<!--
-| Dashboard | Onglet IA | Événements |
-|-----------|-----------|------------|
-| ![Dashboard](screenshots/dashboard.png) | ![IA](screenshots/ia.png) | ![Evenements](screenshots/events.png) |
--->
+
+[Dashboard](screenshots/dashboard.png)[IA](screenshots/ia.png)[Evenements](screenshots/events.png) 
+
 
 🇫🇷 Français
 Présentation
